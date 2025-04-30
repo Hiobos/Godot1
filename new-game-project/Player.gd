@@ -5,6 +5,11 @@ const SPRINT = 8.0
 const JUMP_VELOCITY = 4.5
 const SENSIVITY = 0.005
 
+#head updown
+const HEAD_MV_FREQ = 20.0
+const HEAD_MV_AMP = 0.08
+var t_head = 0.0
+
 var gravity = 9.8
 
 @onready var head = $head
@@ -44,4 +49,12 @@ func _physics_process(delta):
 		velocity.x = 0.0
 		velocity.z = 0.0
 
+	t_head += delta * velocity.length() * float(is_on_floor())
+	camera.transform.origin = _headmv(t_head)
+	
 	move_and_slide()
+
+func _headmv(time) -> Vector3:
+	var pos = Vector3.ZERO
+	pos.y = sin(time * HEAD_MV_FREQ) * HEAD_MV_AMP
+	return pos
