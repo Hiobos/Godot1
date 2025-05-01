@@ -6,7 +6,7 @@ const JUMP_VELOCITY = 4.5
 const SENSIVITY = 0.005
 
 #head updown
-const HEAD_MV_FREQ = 20.0
+const HEAD_MV_FREQ = 3.0
 const HEAD_MV_AMP = 0.08
 var t_head = 0.0
 
