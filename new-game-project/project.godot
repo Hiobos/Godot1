@@ -17,11 +17,14 @@ run/main_scene="uid://dmlygaug3u0bg"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Music="*res://scenes/music.tscn"
+
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/mode=3
 
 [input]
 
